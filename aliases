@@ -15,3 +15,7 @@ alias gp='git push'
 alias gr='git reset'
 alias gs='git status'
 alias gst='git status'
+
+if [ -f ~/configs/custom_aliases ]; then
+    . ~/configs/custom_aliases;
+fi
