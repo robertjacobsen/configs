@@ -16,18 +16,13 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+current_branch() {
+    git symbolic-ref HEAD 2>/dev/null | sed -r -e 's/refs\/heads\/(.*)/ ‹\1›/'
 }
 
 #UH="\u@\h" # Default
 UH="\[\033[01;31m\]karnage\[\033[00m\]" # I use this for my development box to differnetiate it.
-PS1="$UH:\w\[\033[1;36m\]\$(parse_git_branch)\[\033[00m\]\$ "
+PS1="$UH:\w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
 # Load aliases
 . ~/configs/aliases
