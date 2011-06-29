@@ -30,7 +30,7 @@ UH="\[\033[01;31m\]karnage\[\033[00m\]" # I use this for my development box to d
 PS1="$UH:\w\[\033[1;36m\]\$(parse_git_branch)\[\033[00m\]\$ "
 
 # Load aliases
-. ~/configs/bash_aliases
+. ~/configs/aliases
 
 # Add SSH-agent for the win. Carefully stolen from the ZSH ssh-agent plugin,
 # which was based off of http://www.cygwin.com/ml/cygwin/2001-06/msg00537.html
