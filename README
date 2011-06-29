@@ -3,3 +3,9 @@ A collection of different configuration files I use across several computers.
 * If you see something you like, feel free to clone it.
 * If you see something horrible I do, feel free to say that I shouldn't do that.
 * If you see something cool that I didn't know of, feel free to notify me.
+
+Oh, and one more thing. You can copy the files to wherever they should be 
+(typically ~/.<filename>), but some files, such as the bashrc, expects the configs
+folder to exist as a subdirectory that contains the aliases file. 
+
+I just clone the repository into ~/config and create symbolic links to the necessary files.
