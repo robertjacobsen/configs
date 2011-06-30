@@ -17,7 +17,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 current_branch() {
-    git symbolic-ref HEAD 2>/dev/null | sed -r -e 's/refs\/heads\/(.*)/ ‹\1›/'
+    git branch 2>/dev/null | grep "^*" | sed -r -e "s/^\*\s+(.*?)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
 UH="\u@\h" # Default
