@@ -17,7 +17,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 current_branch() {
-    git branch 2>/dev/null | grep "^*" | sed -r -e "s/^\*\s+(.*?)$/ ‹\1›/" -e "s/[()]+//g"
+    git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
 UH="\u@\h" # Default
