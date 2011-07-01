@@ -16,3 +16,7 @@
 	track = !git branch --set-upstream $(git for-each-ref --format=\"%(refname:short)\" $(git symbolic-ref HEAD))
 [push]
 	default = tracking
+[apply]
+	whitespace = fix
+[branch]
+	autosetuprebase = remote
