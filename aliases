@@ -14,6 +14,13 @@ alias gr='git reset'
 alias gs='git status'
 alias gst='git status'
 
+# Make colors on non-Darwin systems.
+UNAME=`uname`
+if [ "$UNAME" != "Darwin" ]; then
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+fi
+
 if [ -f ~/configs/custom_aliases ]; then
     . ~/configs/custom_aliases;
 fi
