@@ -14,7 +14,7 @@
 	hist = log --pretty=format:\"%C(yellow)%h %Cgreen%ad %Creset%s%C(yellow)%d %Creset[%C(cyan)%an%Creset]\" --graph --date=short
 	ff = merge --ff-only @{u}
 	track = !git branch --set-upstream $(git for-each-ref --format=\"%(refname:short)\" $(git symbolic-ref HEAD))
-	find-remote = !bash -c 'if [ -z \"$0\" ]";" then echo \"Usage: git find-remote PATTERN\"";" else for branch in `git for-each-ref --format=\"%(refname)\" refs/remotes/origin/pub`";" do MATCH=$(git ls-tree -r --name-only $branch | grep $0)";" if [ -n \"$MATCH\" ]";" then echo \"$MATCH (${branch:13})\"";" fi";" done";" fi'
+	find-remote = !bash -c 'if [[ \"$0\" == \"bash\" || -z \"$0\" ]]";" then echo \"Usage: git find-remote PATTERN\"";" else for branch in `git for-each-ref --format=\"%(refname)\" refs/remotes/origin/pub`";" do MATCH=$(git ls-tree -r --name-only $branch | grep $0)";" if [ -n \"$MATCH\" ]";" then echo \"$MATCH (${branch:13})\"";" fi";" done";" fi'
 [push]
 	default = tracking
 [apply]
