@@ -17,7 +17,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 current_branch() {
-    git symbolic-ref HEAD 2>/dev/null | sed -r -e 's/refs\/heads\/(.*)/ ‹\1›/'
+    git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
 UH="\u@\h" # Default
@@ -26,6 +26,9 @@ PS1="$UH:\w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
 # Load aliases
 . ~/configs/aliases
+
+# Load git auto-completion
+. ~/configs/git-completion.bash
 
 # Add SSH-agent for the win. Carefully stolen from the ZSH ssh-agent plugin,
 # which was based off of http://www.cygwin.com/ml/cygwin/2001-06/msg00537.html
