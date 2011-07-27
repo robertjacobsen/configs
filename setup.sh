@@ -1,5 +1,10 @@
 #!/bin/bash
 CONFIGS=$(dirname $0)
+ARCH=$(uname)
+BASHRC=".bashrc"
+if [[ "$ARCH" = "Darwin" ]]; then 
+    BASHRC=".bash_profile"
+fi
 
 cd ~
 if [ ! -d .bak ]; then
@@ -8,13 +13,13 @@ if [ ! -d .bak ]; then
 fi
 
 echo "Moving existing files to backup directory..."
-mv .bashrc .bak
+mv $BASHRC .bak
 mv .gitconfig .bak
 mv .vim .bak
 mv .vimrc .bak
 
 echo "Linking config files..."
-ln -s $CONFIGS/bashrc ~/.bashrc
+ln -s $CONFIGS/bashrc ~/$BASHRC
 ln -s $CONFIGS/gitconfig ~/.gitconfig
 ln -s $CONFIGS/vim ~/.vim
 ln -s $CONFIGS/vimrc ~/.vimrc
