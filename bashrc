@@ -24,6 +24,9 @@ UH="\u@\h" # Default
 #UH="\[\033[01;31m\]karnage\[\033[00m\]" # I use this for my development box to differnetiate it.
 PS1="$UH:\w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
+# Set the title of the terminal to the current hostname.
+echo -ne "\033]0;$HOSTNAME\007"
+
 export LC_ALL=en_US.UTF-8
 
 # Load aliases
