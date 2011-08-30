@@ -51,23 +51,23 @@ endif
 
 " Syntax highlighting
 hi Comment          guifg=#7C7C7C     guibg=NONE        gui=NONE      ctermfg=245    ctermbg=NONE        cterm=NONE
-hi String           guifg=#A8FF60     guibg=NONE        gui=NONE      ctermfg=107       ctermbg=NONE        cterm=NONE
-hi Number           guifg=#FF73FD     guibg=NONE        gui=NONE      ctermfg=30     ctermbg=NONE        cterm=NONE
+hi String           guifg=#A8FF60     guibg=NONE        gui=NONE      ctermfg=203       ctermbg=NONE        cterm=NONE
+hi Number           guifg=#FF73FD     guibg=NONE        gui=NONE      ctermfg=193     ctermbg=NONE        cterm=NONE
 
-hi Keyword          guifg=#96CBFE     guibg=NONE        gui=NONE      ctermfg=130            ctermbg=NONE        cterm=NONE
-hi PreProc          guifg=#96CBFE     guibg=NONE        gui=NONE      ctermfg=130       ctermbg=NONE        cterm=NONE
-hi Conditional      guifg=#6699CC     guibg=NONE        gui=NONE      ctermfg=166        ctermbg=NONE        cterm=NONE  " if else end
+hi Keyword          guifg=#d6b67f     guibg=NONE        gui=NONE      ctermfg=209            ctermbg=NONE        cterm=NONE
+hi PreProc          guifg=#899ab4     guibg=NONE        gui=NONE      ctermfg=110       ctermbg=NONE        cterm=NONE
+hi Conditional      guifg=#d6b67f     guibg=NONE        gui=NONE      ctermfg=216        ctermbg=NONE        cterm=NONE  " if else end
 
 hi Todo             guifg=#8f8f8f     guibg=NONE        gui=NONE      ctermfg=red         ctermbg=NONE        cterm=NONE
-hi Constant         guifg=#99CC99     guibg=NONE        gui=NONE      ctermfg=93        ctermbg=NONE        cterm=NONE
+hi Constant         guifg=#99CC99     guibg=NONE        gui=NONE      ctermfg=147        ctermbg=NONE        cterm=NONE
 
 hi Identifier       guifg=#C6C5FE     guibg=NONE        gui=NONE      ctermfg=153  ctermbg=NONE        cterm=NONE
-hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=222       ctermbg=NONE        cterm=NONE
-hi Type             guifg=#FFFFB6     guibg=NONE        gui=NONE      ctermfg=120      ctermbg=NONE        cterm=NONE
+hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=153       ctermbg=NONE        cterm=NONE
+hi Type             guifg=#FFFFB6     guibg=NONE        gui=NONE      ctermfg=183     ctermbg=NONE        cterm=NONE
 hi Statement        guifg=#6699CC     guibg=NONE        gui=NONE      ctermfg=222       ctermbg=NONE        cterm=NONE
 
-hi Special          guifg=#E18964     guibg=NONE        gui=NONE      ctermfg=153       ctermbg=NONE        cterm=NONE
-hi Delimiter        guifg=#00A0A0     guibg=NONE        gui=NONE      ctermfg=96        ctermbg=NONE        cterm=NONE
+hi Special          guifg=#E18964     guibg=NONE        gui=NONE      ctermfg=150       ctermbg=NONE        cterm=NONE
+hi Delimiter        guifg=#00A0A0     guibg=NONE        gui=NONE      ctermfg=120        ctermbg=NONE        cterm=NONE
 hi Operator         guifg=white       guibg=NONE        gui=NONE      ctermfg=blue       ctermbg=NONE        cterm=NONE
 
 hi link Character       Constant
@@ -88,72 +88,15 @@ hi link SpecialChar     Special
 hi link SpecialComment  Special
 hi link Debug           Special
 
-
-" Special for Ruby
-hi rubyRegexp                  guifg=#B18A3D      guibg=NONE      gui=NONE      ctermfg=brown          ctermbg=NONE      cterm=NONE
-hi rubyRegexpDelimiter         guifg=#FF8000      guibg=NONE      gui=NONE      ctermfg=brown          ctermbg=NONE      cterm=NONE
-hi rubyEscape                  guifg=white        guibg=NONE      gui=NONE      ctermfg=cyan           ctermbg=NONE      cterm=NONE
-hi rubyInterpolationDelimiter  guifg=#00A0A0      guibg=NONE      gui=NONE      ctermfg=blue           ctermbg=NONE      cterm=NONE
-hi rubyControl                 guifg=#6699CC      guibg=NONE      gui=NONE      ctermfg=blue           ctermbg=NONE      cterm=NONE  "and break, etc
-"hi rubyGlobalVariable          guifg=#FFCCFF      guibg=NONE      gui=NONE      ctermfg=lightblue      ctermbg=NONE      cterm=NONE  "yield
-hi rubyStringDelimiter         guifg=#336633      guibg=NONE      gui=NONE      ctermfg=lightgreen     ctermbg=NONE      cterm=NONE
-"rubyInclude
-"rubySharpBang
-"rubyAccess
-"rubyPredefinedVariable
-"rubyBoolean
-"rubyClassVariable
-"rubyBeginEnd
-"rubyRepeatModifier
-"hi link rubyArrayDelimiter    Special  " [ , , ]
-"rubyCurlyBlock  { , , }
-
-hi link rubyClass             Keyword 
-hi link rubyModule            Keyword 
-hi link rubyKeyword           Keyword 
-hi link rubyOperator          Operator
-hi link rubyIdentifier        Identifier
-hi link rubyInstanceVariable  Identifier
-hi link rubyGlobalVariable    Identifier
-hi link rubyClassVariable     Identifier
-hi link rubyConstant          Type  
-
-
-" Special for Java
-" hi link javaClassDecl    Type
-hi link javaScopeDecl         Identifier 
-hi link javaCommentTitle      javaDocSeeTag 
-hi link javaDocTags           javaDocSeeTag 
-hi link javaDocParam          javaDocSeeTag 
-hi link javaDocSeeTagParam    javaDocSeeTag 
-
-hi javaDocSeeTag              guifg=#CCCCCC     guibg=NONE        gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
-hi javaDocSeeTag              guifg=#CCCCCC     guibg=NONE        gui=NONE      ctermfg=darkgray    ctermbg=NONE        cterm=NONE
-"hi javaClassDecl              guifg=#CCFFCC     guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
-
-
 " Special for XML
 hi link xmlTag          Keyword 
 hi link xmlTagName      Conditional 
 hi link xmlEndTag       Identifier 
-
 
 " Special for HTML
 hi link htmlTag         Keyword 
 hi link htmlTagName     Conditional 
 hi link htmlEndTag      Identifier 
 
-
 " Special for Javascript
 hi link javaScriptNumber      Number 
-
-
-" Special for Python
-"hi  link pythonEscape         Keyword      
-
-
-" Special for CSharp
-hi  link csXmlTag             Keyword      
-
-
-" Special for PHP
