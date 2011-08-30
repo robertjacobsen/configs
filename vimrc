@@ -22,5 +22,5 @@ set hlsearch
 set incsearch
 set nowrap
 let &t_Co=256
-color damnith 
+color mojo 
 set mouse=a
