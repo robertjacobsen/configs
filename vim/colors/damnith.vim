@@ -51,8 +51,8 @@ endif
 
 " Syntax highlighting
 hi Comment          guifg=#7C7C7C     guibg=NONE        gui=NONE      ctermfg=245    ctermbg=NONE        cterm=NONE
-hi String           guifg=#A8FF60     guibg=NONE        gui=NONE      ctermfg=203       ctermbg=NONE        cterm=NONE
-hi Number           guifg=#FF73FD     guibg=NONE        gui=NONE      ctermfg=193     ctermbg=NONE        cterm=NONE
+hi String           guifg=#A8FF60     guibg=NONE        gui=NONE      ctermfg=193       ctermbg=NONE        cterm=NONE
+hi Number           guifg=#FF73FD     guibg=NONE        gui=NONE      ctermfg=179     ctermbg=NONE        cterm=NONE
 
 hi Keyword          guifg=#d6b67f     guibg=NONE        gui=NONE      ctermfg=209            ctermbg=NONE        cterm=NONE
 hi PreProc          guifg=#899ab4     guibg=NONE        gui=NONE      ctermfg=110       ctermbg=NONE        cterm=NONE
