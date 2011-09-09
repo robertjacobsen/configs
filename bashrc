@@ -20,8 +20,7 @@ current_branch() {
     git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
-UH="\u@\h" # Default
-#UH="\[\033[01;31m\]karnage\[\033[00m\]" # I use this for my development box to differnetiate it.
+UH="\[\033[01;36m\]\h\[\033[00m\]"
 PS1="$UH:\w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
 # Set the title of the terminal to the current hostname.
