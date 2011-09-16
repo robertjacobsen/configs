@@ -20,7 +20,7 @@ current_branch() {
     git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
-UH="\[\033[01;36m\]\h\[\033[00m\]"
+UH="\[\033[01;34m\]\h\[\033[00m\]"
 PS1="$UH \w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
 # Set the title of the terminal to the current hostname.
