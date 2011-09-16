@@ -21,7 +21,7 @@ current_branch() {
 }
 
 UH="\[\033[01;36m\]\h\[\033[00m\]"
-PS1="$UH:\w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
+PS1="$UH \w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
 
 # Set the title of the terminal to the current hostname.
 echo -ne "\033]0;$HOSTNAME\007"
