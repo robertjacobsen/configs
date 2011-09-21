@@ -23,4 +23,4 @@ set incsearch
 set nowrap
 let &t_Co=256
 color damnith 
-set mouse=a
+"set mouse=a
