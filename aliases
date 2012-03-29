@@ -26,6 +26,11 @@ alias gsm='git submodule'
 alias gsmu='git submodule update'
 alias gst='git status'
 
+alias fu='kill'
+alias fuu='kill -9'
+alias fuuu='killall'
+alias fuuuu='killall -9'
+
 # Make colors on non-Darwin systems.
 UNAME=`uname`
 if [ "$UNAME" != "Darwin" ]; then
