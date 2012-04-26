@@ -23,4 +23,8 @@ set incsearch
 set nowrap
 let &t_Co=256
 color damnith 
+
+" Set filetypes for extensions used
+au BufNewFile,BufRead *.ddl set filetype=mysql
+au BufRead,BufNewFile *.tt  set filetype=html
 "set mouse=a
