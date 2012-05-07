@@ -1,3 +1,5 @@
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 syn on
 filetype plugin indent on
 set number
@@ -9,15 +11,23 @@ set expandtab
 set smartindent
 set softtabstop=4
 set laststatus=2
-set cursorline
+set nocompatible
+set showmatch
+set title
 set ttyfast
 set nottybuiltin
+set nobackup
+set noswapfile
 set statusline=[%n]\ [%t]\ [%M%R%Y]%=[%l,%c,%p%%]
-set list listchars=tab:\|\ ,trail:·
+"set list listchars=tab:\|\ ,trail:·
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set pastetoggle=<F2>
 map :Q :q
 map :W :w
 map < :tabnext<cr>
 map > :tabprev<cr>
+map <C-t> :CommandT<cr>
+map <C-b> :CommandTBuffer<cr>
 set hlsearch
 set incsearch
 set nowrap
