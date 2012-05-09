@@ -32,9 +32,17 @@ set hlsearch
 set incsearch
 set nowrap
 let &t_Co=256
-color damnith 
+color damnith
 
 " Set filetypes for extensions used
 au BufNewFile,BufRead *.ddl set filetype=mysql
 au BufRead,BufNewFile *.tt  set filetype=html
 "set mouse=a
+
+" Highlight trailing whitespace in red
+highlight TrailingWS ctermbg=red
+let m = matchadd("TrailingWS", "[ \t]\\+$")
+" Highlight non-normalised leading whitespace in red
+" where normalised means all the tabs are at the front
+highlight BadLeadingWS ctermbg=red
+let m = matchadd("BadLeadingWS", "^[ \t]* \t[ \t]*")
