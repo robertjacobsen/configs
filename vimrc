@@ -46,3 +46,6 @@ let m = matchadd("TrailingWS", "[ \t]\\+$")
 " where normalised means all the tabs are at the front
 highlight BadLeadingWS ctermbg=red
 let m = matchadd("BadLeadingWS", "^[ \t]* \t[ \t]*")
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
