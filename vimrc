@@ -1,5 +1,9 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+
+let g:CommandTMaxDepth=50
+let g:CommandTMaxFiles=1000000
+
 syn on
 filetype plugin indent on
 set number
@@ -19,7 +23,6 @@ set nottybuiltin
 set nobackup
 set noswapfile
 set statusline=[%n]\ [%t]\ [%M%R%Y]%=[%l,%c,%p%%]
-"set list listchars=tab:\|\ ,trail:·
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
 map :Q :q
@@ -37,7 +40,6 @@ color damnith
 " Set filetypes for extensions used
 au BufNewFile,BufRead *.ddl set filetype=mysql
 au BufRead,BufNewFile *.tt  set filetype=html
-"set mouse=a
 
 " Highlight trailing whitespace in red
 highlight TrailingWS ctermbg=red
