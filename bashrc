@@ -37,6 +37,9 @@ export LC_ALL=en_US.UTF-8
 # Fix PATH for homebrew
 PATH=/usr/local/bin:${PATH}
 
+# Always have xterm-256
+TERM=xterm-256color
+
 # Add SSH-agent for the win. Carefully stolen from the ZSH ssh-agent plugin,
 # which was based off of http://www.cygwin.com/ml/cygwin/2001-06/msg00537.html
 SSH_ENV=$HOME/.ssh/environment
