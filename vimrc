@@ -25,6 +25,8 @@ set noswapfile
 set statusline=[%n]\ [%t]\ [%M%R%Y]%=[%l,%c,%p%%]
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
+set scrolloff=30
+set sidescrolloff=30
 map :Q :q
 map :W :w
 map < :tabnext<cr>
