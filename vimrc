@@ -36,6 +36,7 @@ map <C-b> :CommandTBuffer<cr>
 set hlsearch
 set incsearch
 set nowrap
+set backspace=indent,eol,start
 let &t_Co=256
 
 color damnith
