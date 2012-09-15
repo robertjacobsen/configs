@@ -20,8 +20,28 @@ current_branch() {
     git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
-UH="\[\033[01;34m\]\h\[\033[00m\]"
-PS1="$UH \w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\$ "
+# Add some easier colours
+if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+    MAGENTA=$(tput setaf 9)
+    ORANGE=$(tput setaf 172)
+    GREEN=$(tput setaf 190)
+    PURPLE=$(tput setaf 141)
+    WHITE=$(tput setaf 256)
+else
+    MAGENTA=$(tput setaf 5)
+    ORANGE=$(tput setaf 4)
+    GREEN=$(tput setaf 2)
+    PURPLE=$(tput setaf 1)
+    WHITE=$(tput setaf 7)
+fi
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\$(pwd)\[$WHITE\]\$([[ -n \$(__git_ps1) ]] && echo \" on\")\[$PURPLE\]\$(current_branch)\[$WHITE\]\n> \[$RESET\]"
+PS2="\[$ORANGE\]→ \[$RESET\]"
+
+#UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
+#PS1="$UH \w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\n\$ "
 
 # Set the title of the terminal to the current hostname.
 echo -ne "\033]0;$HOSTNAME\007"
