@@ -37,7 +37,7 @@ fi
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 
-PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\$(pwd)\[$WHITE\]\$([[ -n \$(__git_ps1) ]] && echo \" on\")\[$PURPLE\]\$(current_branch)\[$WHITE\]\n$ \[$RESET\]"
+PS1="\[$BOLD$ORANGE\]\h\[$WHITE\] :: \[$GREEN\]\$(pwd)\[$WHITE\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$WHITE\] $ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 #UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
