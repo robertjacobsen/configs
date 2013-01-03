@@ -11,9 +11,9 @@ set cursorline
 set report=0
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smartindent
-set softtabstop=4
 set laststatus=2
 set nocompatible
 set showmatch
@@ -37,13 +37,21 @@ set hlsearch
 set incsearch
 set nowrap
 set backspace=indent,eol,start
+
 let &t_Co=256
 
 color damnith
 
 " Set filetypes for extensions used
-au BufNewFile,BufRead *.ddl set filetype=mysql
-au BufRead,BufNewFile *.tt  set filetype=html
+augroup filetype
+    au  BufRead,BufNewFile *.ddl set filetype=mysql
+    au  BufRead,BufNewFile *.tt  set filetype=html
+    au  BufRead,BufNewFile *.tpl set filetype=html
+augroup END
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=0
+autocmd FileType php  setlocal textwidth=80 colorcolumn=+1
+
 
 " Highlight trailing whitespace in red
 highlight TrailingWS ctermbg=red
