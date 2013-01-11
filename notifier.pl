@@ -42,4 +42,5 @@ while (1) {
             `terminal-notifier -message "Notification from Weechat"`;
         }
     }
+    sleep 3;
 }
