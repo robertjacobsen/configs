@@ -55,7 +55,7 @@ export LC_ALL=en_US.UTF-8
 . ~/configs/git-completion.bash
 
 # Fix PATH for homebrew
-PATH=/usr/local/bin:${PATH}
+PATH=/usr/local/bin:/usr/local/share/npm/bin:${PATH}
 
 # Always have xterm-256
 TERM=xterm-256color
