@@ -47,6 +47,7 @@ augroup filetype
     au  BufRead,BufNewFile *.ddl set filetype=mysql
     au  BufRead,BufNewFile *.tt  set filetype=html
     au  BufRead,BufNewFile *.tpl set filetype=html
+    au  BufRead,BufNewFile *.more set filetype=less
 augroup END
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=0
