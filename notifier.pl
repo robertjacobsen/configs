@@ -30,8 +30,8 @@ if (!defined $ARGV[0]) {
     die "Usage: perl notifier.pl user\@hostname.com";
 }
 
-if (my $pid = `ps aux | grep notifier.pl | grep -v $$ | grep -v grep | awk '{print \$2}'`) {
-    `kill -9 $pid`;
+if (`ps aux | grep notifier.pl | grep -v $$ | grep -v grep`) {
+    exit 0;
 }
 
 my $parent = fork();
