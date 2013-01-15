@@ -57,8 +57,12 @@ export LC_ALL=en_US.UTF-8
 # Fix PATH for homebrew
 PATH=/usr/local/bin:/usr/local/share/npm/bin:${PATH}
 
-# Always have xterm-256
-TERM=xterm-256color
+# Always have 256 color
+if [[ $STY ]]; then
+    export TERM=screen-256color
+else
+    export TERM=xterm-256color
+fi
 
 # Add SSH-agent for the win. Carefully stolen from the ZSH ssh-agent plugin,
 # which was based off of http://www.cygwin.com/ml/cygwin/2001-06/msg00537.html
