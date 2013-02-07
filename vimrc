@@ -23,7 +23,8 @@ set nottybuiltin
 set nobackup
 set noswapfile
 set statusline=[%n]\ [%t]\ [%M%R%Y]%=[%l,%c,%p%%]
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>.,trail:.,extends:»,precedes:«,nbsp:¬
+set list
 set pastetoggle=<F2>
 set scrolloff=30
 set sidescrolloff=30
@@ -40,7 +41,13 @@ set backspace=indent,eol,start
 
 let &t_Co=256
 
-color damnith
+if has("gui_running")
+    color mojo
+else
+    color damnith
+endif
+
+hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 
 " Set filetypes for extensions used
 augroup filetype
@@ -55,7 +62,7 @@ autocmd FileType php  setlocal textwidth=80 colorcolumn=+1
 
 
 " Highlight trailing whitespace in red
-highlight TrailingWS ctermbg=red
+highlight TrailingWS ctermbg=red guibg=#cc0000
 let m = matchadd("TrailingWS", "[ \t]\\+$")
 " Highlight non-normalised leading whitespace in red
 " where normalised means all the tabs are at the front
@@ -64,3 +71,4 @@ let m = matchadd("BadLeadingWS", "^[ \t]* \t[ \t]*")
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/ / /e
