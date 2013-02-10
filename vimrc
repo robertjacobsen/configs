@@ -70,5 +70,12 @@ highlight BadLeadingWS ctermbg=red
 let m = matchadd("BadLeadingWS", "^[ \t]* \t[ \t]*")
 
 " Remove trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * :%s/ / /e
+autocmd BufWritePre * call FixSource()
+
+function! FixSource()
+    :%s/\s\+$//e
+
+    if (expand('%:t') != '.vimrc')
+        :%s/ / /ge
+    endif
+endfunction
