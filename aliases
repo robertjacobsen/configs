@@ -25,6 +25,7 @@ alias gsh='git show'
 alias gsm='git submodule'
 alias gsmu='git submodule update'
 alias gst='git status'
+alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 
 alias fu='kill'
 alias fuu='kill -9'
