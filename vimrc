@@ -51,10 +51,11 @@ hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 
 " Set filetypes for extensions used
 augroup filetype
-    au  BufRead,BufNewFile *.ddl set filetype=mysql
-    au  BufRead,BufNewFile *.tt  set filetype=html
-    au  BufRead,BufNewFile *.tpl set filetype=html
-    au  BufRead,BufNewFile *.more set filetype=less
+    au  BufRead,BufNewFile *.tt     set filetype=html
+    au  BufRead,BufNewFile *.tpl    set filetype=html
+    au  BufRead,BufNewFile *.more   set filetype=less
+    au  BufRead,BufNewFile *.less   set filetype=less
+    au  BufRead,BufNewFile *.ep     set filetype=html
 augroup END
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=0
