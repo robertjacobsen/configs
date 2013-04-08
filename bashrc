@@ -27,17 +27,19 @@ if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
     GREEN=$(tput setaf 190)
     PURPLE=$(tput setaf 141)
     WHITE=$(tput setaf 256)
+    BLACK=$(tput setaf 0)
 else
     MAGENTA=$(tput setaf 5)
     ORANGE=$(tput setaf 4)
     GREEN=$(tput setaf 2)
     PURPLE=$(tput setaf 1)
     WHITE=$(tput setaf 7)
+    BLACK=$(tput setaf 0)
 fi
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 
-PS1="\[$BOLD$ORANGE\]\h\[$RESET$BOLD\] :: \[$GREEN\]\$(pwd)\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\] $ \[$RESET\]"
+PS1="\[$BOLD$ORANGE\]\h\[$RESET$BOLD\] :: \[$MAGENTA\]\$(pwd)\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\] $ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 #UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
