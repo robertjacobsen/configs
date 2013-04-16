@@ -38,6 +38,7 @@ set hlsearch
 set incsearch
 set nowrap
 set backspace=indent,eol,start
+set pastetoggle=<F12>
 
 let &t_Co=256
 
@@ -58,6 +59,7 @@ augroup filetype
     au  BufRead,BufNewFile *.ep             set filetype=html
     au  BufRead,BufNewFile */nginx/*.conf   set filetype=nginx
     au  BufRead,BufNewFile *.vcl            set filetype=vcl
+    au  BufRead,BufNewFile *.pp             set filetype=puppet
 augroup END
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=0
