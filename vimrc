@@ -42,11 +42,7 @@ set pastetoggle=<F12>
 
 let &t_Co=256
 
-if has("gui_running")
-    color mojo
-else
-    color damnith
-endif
+color distinguished
 
 hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 
