@@ -73,6 +73,7 @@ SSH_ENV=$HOME/.ssh/environment
 function start_agent {
   /usr/bin/env ssh-agent | sed 's/^echo/#echo/' > $SSH_ENV
   chmod 600 $SSH_ENV
+  . $SSH_ENV > /dev/null
 
   # Find all keys we might have and add them.
   find ~/.ssh -name 'id_*' -not -name '*.pub' -exec /usr/bin/ssh-add {} \;
