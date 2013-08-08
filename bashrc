@@ -39,8 +39,12 @@ fi
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 
-PS1="\[$BOLD$ORANGE\]\h\[$RESET$BOLD\] :: \[$MAGENTA\]\$(pwd)\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\] $ \[$RESET\]"
+PS1="\[$BOLD$ORANGE\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\w\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
+
+if [[ !whoami -eq 'robertj' ]]; then
+    PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]@$PS1"
+fi
 
 #UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
 #PS1="$UH \w\[\033[1;36m\]\$(current_branch)\[\033[00m\]\n\$ "
