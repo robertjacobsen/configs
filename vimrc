@@ -42,7 +42,8 @@ set pastetoggle=<F12>
 
 let &t_Co=256
 
-color distinguished
+color default
+set bg=light
 
 hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 
