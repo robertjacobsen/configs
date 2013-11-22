@@ -32,11 +32,13 @@ alias fuu='kill -9'
 alias fuuu='killall'
 alias fuuuu='killall -9'
 
-# Make colors on non-Darwin systems.
+# Why yes, my dear Pakleds, we can make colours go.
+alias grep='grep --color=auto'
 UNAME=`uname`
 if [ "$UNAME" != "Darwin" ]; then
     alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
+else
+    alias ls='ls -G'
 fi
 
 if [ -f ~/configs/custom_aliases ]; then
