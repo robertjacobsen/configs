@@ -42,7 +42,7 @@ RESET=$(tput sgr0)
 PS1="\[$BOLD$ORANGE\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\w\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
-if [[ !whoami -eq 'robertj' ]]; then
+if [[ "$(whoami)" != "robertj" ]]; then
     PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]@$PS1"
 fi
 
