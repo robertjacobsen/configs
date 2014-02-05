@@ -42,8 +42,8 @@ set pastetoggle=<F12>
 
 let &t_Co=256
 
-color default
-set bg=light
+"set bg=light
+color ir_black
 
 hi SpecialKey guifg=#ffffff guibg=#cc0000 ctermfg=white ctermbg=red
 
