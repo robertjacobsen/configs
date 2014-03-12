@@ -20,26 +20,8 @@ current_branch() {
     git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
-# Add some easier colours
-if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-    MAGENTA=$(tput setaf 9)
-    ORANGE=$(tput setaf 172)
-    GREEN=$(tput setaf 190)
-    PURPLE=$(tput setaf 141)
-    WHITE=$(tput setaf 256)
-    BLACK=$(tput setaf 0)
-else
-    MAGENTA=$(tput setaf 5)
-    ORANGE=$(tput setaf 4)
-    GREEN=$(tput setaf 2)
-    PURPLE=$(tput setaf 1)
-    WHITE=$(tput setaf 7)
-    BLACK=$(tput setaf 0)
-fi
-BOLD=$(tput bold)
-RESET=$(tput sgr0)
-
-PS1="\[$BOLD$ORANGE\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\w\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
+. ~/configs/colors
+PS1="\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\w\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 if [[ ! "$(whoami)" =~ r(obertj?|ja) ]]; then

@@ -1,0 +1,22 @@
+# Add some easier colors
+if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
+    MAGENTA=$(tput setaf 9)
+    ORANGE=$(tput setaf 172)
+    GREEN=$(tput setaf 190)
+    PURPLE=$(tput setaf 141)
+    WHITE=$(tput setaf 256)
+    BLACK=$(tput setaf 0)
+else
+    MAGENTA=$(tput setaf 5)
+    ORANGE=$(tput setaf 4)
+    GREEN=$(tput setaf 2)
+    PURPLE=$(tput setaf 1)
+    WHITE=$(tput setaf 7)
+    BLACK=$(tput setaf 0)
+fi
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+
+# Host color
+PSCOLOR=$ORANGE
