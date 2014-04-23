@@ -20,8 +20,22 @@ current_branch() {
     git branch 2>/dev/null | grep "^*" | sed -e "s/^* \(.*\)$/ ‹\1›/" -e "s/[()]+//g"
 }
 
+current_directory_short() {
+    SED="sed"
+    if [[ -n `which gsed` ]]; then
+        SED="gsed"
+    fi
+
+    SPWD=`pwd | $SED -r -e 's!^/(Users|home)/\w+!~!' -e 's!(/.)[^/]*!\1!g' -e 's/\w+$//g'`
+    SDIR=""
+    if [[ "${SPWD}" != "~" ]]; then
+        SDIR=`pwd | $SED 's!.*/!!'`
+    fi
+    echo "${SPWD}${SDIR}"
+}
+
 . ~/configs/colors
-PS1="\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\w\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
+PS1="\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\$(current_directory_short)\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 if [[ ! "$(whoami)" =~ r(obertj?|ja) ]]; then
