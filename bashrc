@@ -21,17 +21,7 @@ current_branch() {
 }
 
 current_directory_short() {
-    SED="sed"
-    if [[ -n `which gsed` ]]; then
-        SED="gsed"
-    fi
-
-    SPWD=`pwd | $SED -r -e 's!^/(Users|home)/\w+!~!' -e 's!(/.)[^/]*!\1!g' -e 's/\w+$//g'`
-    SDIR=""
-    if [[ "${SPWD}" != "~" ]]; then
-        SDIR=`pwd | $SED 's!.*/!!'`
-    fi
-    echo "${SPWD}${SDIR}"
+    echo $PWD | perl -e'$p=<STDIN>;$p=~s{^/(Users|home)/[^/]+}{~};@a=split/\//,$p;@c=();@b=@a>1?reverse(pop@a,pop@a):();for(@a){push@c,substr($_,0,1);}push@c,@b;print join"/",@c;'
 }
 
 . ~/configs/colors
