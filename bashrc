@@ -66,7 +66,7 @@ function start_agent {
   . $SSH_ENV > /dev/null
 
   # Find all keys we might have and add them.
-  find ~/.ssh -name 'id_*' -not -name '*.pub' -maxdepth 1 -exec /usr/bin/ssh-add {} \;
+  find ~/.ssh -maxdepth 1 -name 'id_*' -not -name '*.pub'  -exec /usr/bin/ssh-add {} \;
 }
 
 # Source SSH settings, if applicable
