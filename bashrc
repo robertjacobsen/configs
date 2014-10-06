@@ -25,11 +25,11 @@ current_directory_short() {
 }
 
 . ~/configs/colors
-PS1="\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:\[$MAGENTA\]\$(current_directory_short)\[$RESET$BOLD\]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
+PS1="\[$RESET$BOLD\][\[$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 if [[ ! "$(whoami)" =~ r(obertj?|ja) ]]; then
-    PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]@$PS1"
+    PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]@\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:$PS1"
 fi
 
 #UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
