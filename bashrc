@@ -25,7 +25,7 @@ current_directory_short() {
 }
 
 . ~/configs/colors
-PS1="\[$RESET$BOLD\][\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n $HOSTNAME)\[$RESET\]\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n ':')\[$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\[$PURPLE\]\[\$(current_branch)\]\[$RESET$BOLD\]\$ \[$RESET\]"
+PS1="\[$RESET$BOLD\][\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n $HOSTNAME)\[$RESET\]\$([[ \"$SHOWHOST\" -ge 1 ]] && echo -n ':')\[$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]\$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 if [[ ! "$(whoami)" =~ r(obertj?|ja) ]]; then
