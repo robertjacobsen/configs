@@ -24,18 +24,12 @@ current_directory_short() {
     echo $PWD | perl -e'$p=<STDIN>;$p=~s{^/(Users|home)/[^/]+}{~};@a=split/\//,$p;@c=();@b=@a>1?reverse(pop@a,pop@a):();for(@a){push@c,substr($_,0,1);}push@c,@b;print join"/",@c;'
 }
 
-show_host() {
-    if [[ $SHOWHOST -ge 1 ]]; then
-        echo -n "$HOSTNAME$RESET:"
-    fi
-}
-
 . ~/configs/colors
-PS1="\[$RESET$BOLD\][\[\$(show_host)$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\$([[ -n \$(__git_ps1) ]])\[$PURPLE\]\$(current_branch)\[$RESET$BOLD\]$ \[$RESET\]"
+PS1="\[$RESET$BOLD\][\$([[ $SHOWHOST -ge 1 ]] && echo -n $HOSTNAME)\[$RESET\]\$([[ $SHOWHOST -ge 1 ]] && echo -n ':')\[$PSCOLOR\]\$(current_directory_short)\[$RESET$BOLD\]]\[$PURPLE\]\[\$(current_branch)\]\[$RESET$BOLD\]\$ \[$RESET\]"
 PS2="\[$ORANGE\]→ \[$RESET\]"
 
 if [[ ! "$(whoami)" =~ r(obertj?|ja) ]]; then
-    PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]@\[$BOLD$PSCOLOR\]\h\[$BOLD$WHITE\]:$PS1"
+    PS1="\[$RESET$BOLD\]\u\[$BOLD$WHITE\]\[$RESET$PSCOLOR\] -> $PS1"
 fi
 
 #UH="\[\033[02;32m\]\u\033[00m\] / \033[01;34m\]nef\[\033[00m\] :"
